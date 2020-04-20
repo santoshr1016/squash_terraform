@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 /*
-Use the s3_mod using the module and hook up with the out variables defined in s3_mod
-Now you are no longer dictate by the required/optional variables, Everything is defined by you
+Use the s3_mod module using dot operator "module.XXX" and hook its variables with the out variables defined in s3_mod
+Now you are no longer dictated by the required/optional variables of s3_mod, Everything is defined by you
 and thats why we should use module programming of IaC
 */
 module "mod_create_s3" {
