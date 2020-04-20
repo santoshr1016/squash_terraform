@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-southeast-1"
 }
 
 /*
@@ -8,8 +8,19 @@ Now you are no longer dictated by the required/optional variables of s3_mod, Eve
 and thats why we should use module programming of IaC
 */
 module "mod_create_s3" {
+  var_bkt_name = "20April-Bucket-Name"
+  var_versioning = false
   source = "./s3_mod"
+}
 
-  var_bkt_name = module.mod_create_s3.out_my_bkt_name
-  var_versioning = module.mod_create_s3.out_my_bkt_versioning
+output "print_bucket_name" {
+  value = module.mod_create_s3.out_my_bkt_name
+}
+
+output "print_versioning" {
+  value = module.mod_create_s3.out_my_bkt_versioning
+}
+
+output "print_bkt_arn" {
+  value = module.mod_create_s3.out_bkt_arn
 }
