@@ -17,11 +17,13 @@ output "boolean_variable" {
   value = var.bool_data_type
 }
 
+# Suppressing Values in CLI Output
 output "taken_string_is_kept_hidden" {
   sensitive = true
   value = var.variable_taking_user_input_in_terminal
 }
 
+# Suppressing Values in CLI Output
 output "taken_string_is_not_hidden" {
   sensitive = false
   value = var.variable_taking_user_input_in_terminal
