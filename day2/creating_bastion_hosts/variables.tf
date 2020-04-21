@@ -24,6 +24,11 @@ variable "var_env" {
   default     = "Dev"
 }
 
+variable "var_host_ip" {
+  description = "HostIP, Allowing traffic from my computer, Provide your IP address"
+  default = "XX.XX.XX.XX/32"
+}
+
 //aws ec2 describe-images --query 'Images[*].[ImageId]' --owners self amazon --filters 'Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-????????' 'Name=state,Values=available' --instance-type t2.micro --output text
 
 
