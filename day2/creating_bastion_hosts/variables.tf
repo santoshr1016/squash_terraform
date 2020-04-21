@@ -4,6 +4,7 @@ variable "var_region" {
   default     = "ap-southeast-1"
 }
 
+# aws ec2 create-key-pair --key-name cfn-key1 --query 'KeyMaterial' --output text > cfn-key1.pem
 variable "var_ssh_key" {
   description = "ssh key to login to ec2 instance"
   default = "cfn-key1"
@@ -25,7 +26,7 @@ variable "var_env" {
 }
 
 variable "var_host_ip" {
-  description = "HostIP, Allowing traffic from my computer, Provide your IP address"
+  description = "HostIP, Allowing traffic from my computer"
   default = "XX.XX.XX.XX/32"
 }
 
