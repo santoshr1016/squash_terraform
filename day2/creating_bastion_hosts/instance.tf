@@ -25,9 +25,9 @@ resource "aws_instance" "var_ec2_instance" {
       DATA
   */
 
-  lifecycle = {
-    create_before_destroy = true
-  }
+//  lifecycle = {
+//    create_before_destroy = true
+//  }
   tags = {
     # Name = {var.var_server_name}-{count.index} :P
     # Name = "${var.var_server_name}-${count.index}"
