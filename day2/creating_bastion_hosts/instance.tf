@@ -1,14 +1,19 @@
-resource "aws_instance" "example" {
-  ami           = var.AMIS[var.AWS_REGION]
-  instance_type = "t2.micro"
+resource "aws_instance" "var_ec2_instance" {
+  ami           = var.var_amis[var.var_region]
+  instance_type = var.var_instance_type
 
   # the VPC subnet
-  subnet_id = aws_subnet.main-public-1.id
+  subnet_id = aws_subnet.var_main_pub_3.id
 
   # the security group
-  vpc_security_group_ids = [aws_security_group.allow-ssh.id]
+  vpc_security_group_ids = [aws_security_group.var_bastion.id]
 
   # the public SSH key
-  key_name = aws_key_pair.mykeypair.key_name
+  key_name = var.var_ssh_key
+
+  tags = {
+    Name = var.var_server_name
+    Env = var.var_env
+  }
 }
 

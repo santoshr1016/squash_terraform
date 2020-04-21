@@ -1,4 +1,4 @@
-resource "aws_security_group" "allow-ssh" {
+resource "aws_security_group" "var_bastion" {
   vpc_id      = aws_vpc.main.id
   name        = "allow-ssh"
   description = "security group that allows ssh and all egress traffic"
