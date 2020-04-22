@@ -10,7 +10,7 @@ variable "key_name" {
   default = "cfn-key1"
 }
 
-variable "PUBLIC_SUBNETS" {
+variable "public_subnets" {
   type = list(string)
 }
 
@@ -44,7 +44,7 @@ resource "aws_instance" "instance" {
   instance_type = var.INSTANCE_TYPE
 
   # the VPC subnet
-  subnet_id = element(var.PUBLIC_SUBNETS, 0)
+  subnet_id = element(var.public_subnets, 0)
 
   # the security group
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]

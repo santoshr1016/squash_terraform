@@ -8,6 +8,6 @@ module "instances" {
   source         = "..\/..\/hello_packer\/modules\/server"
 //  ENV            = var.ENV
   VPC_ID         = module.main-vpc.vpc_id
-  PUBLIC_SUBNETS = module.main-vpc.public_subnets
+  public_subnets = module.main-vpc.public_subnets
 }
 
