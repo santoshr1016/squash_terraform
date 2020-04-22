@@ -1,4 +1,4 @@
-### Motivation for writing DRY IsC
+### Motivation for writing DRY IaC
 ```text
 This work is inspired from terragrunt.io
 The code sample are borrowed from there.
@@ -11,6 +11,10 @@ The code sample are borrowed from there.
 3. Run the command to see the plan, terragrunt plan -out tfplan 
 4  Fire the command to create resources,  terragunt apply
 ```
+### Reference
+line here [line]
+
+folder here [folder]
 
 [line]: <https://github.com/santoshr1016/squash_terraform/blob/master/day3/hello_terragrunt/dry_terragrunt/environment/ap-southeast-1/qa/webserver-cluster/terragrunt.hcl#L13>
 [folder]: <https://github.com/santoshr1016/squash_terraform/tree/master/day3/hello_terragrunt/dry_terragrunt/environment/ap-southeast-1/qa/webserver-cluster>
