@@ -28,7 +28,7 @@ variable "map_data_type" {
 
 # list
 variable "list_data_type" {
-  type = "list"
+  type = list(string)
   default = ["one", "two", "three", "east", "west"]
 }
 
