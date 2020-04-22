@@ -33,3 +33,26 @@ override.tf.json
 .idea
 day1/writing-good-modules
 day1/writing-good-modules/*
+
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+
+# Terragrunt
+.terragrunt-cache
+
+# OS X
+.history
+.DS_Store
+
+# IntelliJ
+.idea_modules
+*.iml
+*.iws
+*.ipr
+.idea/
+build/
+*/build/
+out/
