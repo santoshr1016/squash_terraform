@@ -8,11 +8,9 @@ locals {
 
 dependency "vpc" {
   config_path = "../vpc"
-
   mock_outputs = {
-    AWS_REGION = "ap-southeast-1"
-    vpc_id = "temporary-dummy-id"
-    public_subnets = ["SASA"]
+    vpc_id = "TEST"
+    public_subnets = ["SN"]
   }
 }
 
@@ -29,6 +27,7 @@ include {
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 inputs = {
-  VPC_ID = dependency.vpc.outputs.vpc_id
+  aws_region = local.env
+  vpc_id = dependency.vpc.outputs.vpc_id
   public_subnets = dependency.vpc.outputs.public_subnets
 }

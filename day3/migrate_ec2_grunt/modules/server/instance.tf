@@ -1,18 +1,3 @@
-#variable "ENV" {}
-variable "VPC_ID" {}
-
-variable "INSTANCE_TYPE" {
-  default = "t2.micro"
-}
-
-variable "key_name" {
-  type = string
-  default = "cfn-key1"
-}
-
-variable "public_subnets" {
-  type = list(string)
-}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -41,7 +26,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = var.INSTANCE_TYPE
+  instance_type = var.instance_type
 
   # the VPC subnet
   subnet_id = element(var.public_subnets, 0)
@@ -53,16 +38,14 @@ resource "aws_instance" "instance" {
   key_name = var.key_name
 
   tags = {
-    #Name         = "Santosh-${var.ENV}"
-    Name         = "Santosh-EC2"
-    #Environmnent = var.ENV
+    Name         = "Santosh-EC2-${var.env}"
+    Environmnent = var.env
   }
 }
 
 resource "aws_security_group" "allow-ssh" {
-  vpc_id      = var.VPC_ID
-  name        = "allow-ssh"
-  # name        = "allow-ssh-${var.ENV}"
+  vpc_id      = var.vpc_id
+  name        = "allow-ssh-${var.env}"
   description = "security group that allows ssh and all egress traffic"
 
   egress {
@@ -80,9 +63,8 @@ resource "aws_security_group" "allow-ssh" {
   }
 
   tags = {
-    Name         = "allow-ssh"
-    Environmnent = "Santosh-SG"
-    #Environmnent = var.ENV
+    Name         = "allow-ssh-${var.env}"
+    Environmnent = var.env
   }
 }
 
