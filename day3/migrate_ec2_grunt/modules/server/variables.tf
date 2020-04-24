@@ -13,4 +13,5 @@ variable "key_name" {
 
 variable "public_subnets" {
   type = list(string)
+  default = []
 }

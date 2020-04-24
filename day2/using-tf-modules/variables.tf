@@ -4,6 +4,10 @@ variable "dhcp_options_domain_name_servers" {
   default     = ["AmazonProvidedDNS"]
 }
 
+variable "vpc_name" {
+  default = "MainVPC"
+}
+
 variable "cidr" {
   description = ""
   default  = "10.30.0.0/16"
@@ -25,6 +29,10 @@ variable "public_subnets" {
   description = ""
   type = "list"
   default = ["10.30.11.0/24", "10.30.12.0/24", "10.30.13.0/24"]
+}
+
+variable "vpc_enable_nat_gateway" {
+  default = true
 }
 
 variable "database_subnets" {
