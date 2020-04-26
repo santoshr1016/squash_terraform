@@ -4,11 +4,6 @@ locals {
 
   # Extract out common variables for reuse
   env = local.environment_vars.locals.environment
-  aws_region = local.environment_vars.locals.aws_region
-}
-
-dependency "vpc" {
-  config_path = "../vpc"
 }
 
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
@@ -24,8 +19,5 @@ include {
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 inputs = {
-  aws_region = local.aws_region
-  env = local.env
-  vpc_id = dependency.vpc.outputs.vpc_id
-  public_subnets = dependency.vpc.outputs.public_subnets
+  AWS_REGION = "ap-southeast-1"
 }

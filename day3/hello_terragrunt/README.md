@@ -11,6 +11,15 @@ The code sample are borrowed from there.
 3. Run the command to see the plan, terragrunt plan -out tfplan 
 4  Fire the command to create resources,  terragunt apply
 ```
+
+## Auto approve in terragrunt
+```text
+To auto-approve you can execute 
+terragrunt apply-all --terragrunt-non-interactive
+                    OR
+echo "Y" | terragrunt apply-all
+```
+
 ### Reference
 line here [line]
 
