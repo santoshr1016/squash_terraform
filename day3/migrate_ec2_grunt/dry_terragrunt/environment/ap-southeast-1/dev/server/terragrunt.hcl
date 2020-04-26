@@ -8,10 +8,6 @@ locals {
 
 dependency "vpc" {
   config_path = "../vpc"
-  mock_outputs = {
-    vpc_id = "TEST"
-    public_subnets = ["SN"]
-  }
 }
 
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the

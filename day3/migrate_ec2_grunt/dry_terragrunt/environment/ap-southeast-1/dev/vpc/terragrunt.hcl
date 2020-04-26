@@ -4,6 +4,7 @@ locals {
 
   # Extract out common variables for reuse
   env = local.environment_vars.locals.environment
+  aws_region = "ap-southeast-1"
 }
 
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
@@ -19,6 +20,6 @@ include {
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 inputs = {
-  AWS_REGION = "ap-southeast-1"
-  #ENV = local.env
+  aws_region = "ap-southeast-1"
+  env = local.env
 }
