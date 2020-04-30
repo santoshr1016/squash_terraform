@@ -1,13 +1,15 @@
 module "main-vpc" {
-  source     = "..\/..\/hello_packer\/modules\/vpc"
-//  ENV        = var.ENV
-  AWS_REGION = var.AWS_REGION
+  source = "../modules/vpc"
+  aws_region = var.AWS_REGION
+  env = var.ENV
 }
 
 module "instances" {
-  source         = "..\/..\/hello_packer\/modules\/server"
-//  ENV            = var.ENV
-  VPC_ID         = module.main-vpc.vpc_id
+  source         = "../modules/server"
+  ENV            = var.ENV
   public_subnets = module.main-vpc.public_subnets
+  aws_region = var.AWS_REGION
+  env = var.ENV
+  vpc_id = module.main-vpc.vpc_id
 }
 
