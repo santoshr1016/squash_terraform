@@ -2,6 +2,19 @@ provider "aws" {
   region = "ap-southeast-1"
 }
 
+data "aws_ami" "amazin_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*"]
+  }
+}
+
+output "ec2_ami" {
+  value = data.aws_ami.amazin_linux.id
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"] # Canonical
