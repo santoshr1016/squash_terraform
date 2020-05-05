@@ -1,0 +1,7 @@
+is_sunny     = rule { weather is "sunny" }
+is_wednesday = rule { day is "wednesday" }
+
+main = rule { is_sunny and is_wednesday }
+
+weather = "sunny"
+day = "wednesday"
