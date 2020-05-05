@@ -1,0 +1,9 @@
+// run -> sentinel apply policy.sentinel
+
+
+import "foo"
+
+// prints "hello world" in the trace
+foo.hello()
+
+main = true

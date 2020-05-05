@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "foo": {
+      "path": "modules/foo.sentinel"
+    }
+  }
+}
