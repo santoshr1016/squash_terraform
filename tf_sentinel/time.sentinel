@@ -1,3 +1,5 @@
+// //How to run -> sentinel apply time.sentinel
+
 import "time"
 
 hour = time.now.hour

@@ -1,3 +1,5 @@
+// How to run sentinel apply sunny_rainy.sentinel
+
 is_sunny     = rule { weather is "sunny" }
 is_wednesday = rule { day is "wednesday" }
 
