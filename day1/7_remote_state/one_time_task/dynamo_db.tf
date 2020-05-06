@@ -9,3 +9,7 @@ resource "aws_dynamodb_table" "tflocktable" {
         type = "S"
     }
 }
+
+output "dynamo_lock" {
+    value = aws_dynamodb_table.tflocktable.name
+}

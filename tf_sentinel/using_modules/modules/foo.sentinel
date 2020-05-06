@@ -1,4 +1,4 @@
 hello = func() {
   print("hello world!")
-  return undefined
+  return false
 }
