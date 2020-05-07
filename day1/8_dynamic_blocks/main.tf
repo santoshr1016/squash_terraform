@@ -35,5 +35,11 @@ resource "aws_security_group" "rs_public_sg" {
       cidr_blocks = [var.internet]
     }
   }
+}
 
+output "ingress_port_mapping" {
+  value = {
+    for ingress in aws_security_group.rs_public_sg.ingress:
+  format("from %d", ingress.from_port) => format("To %d", ingress.to_port)
+  }
 }
