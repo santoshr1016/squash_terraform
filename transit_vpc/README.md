@@ -27,3 +27,23 @@ Add the Route Table entry for the Dev Public SN which is
 Destination as CIDR/8 and Target as TransitGW 
 and similar to it Add the Route table for the QA Public SN 
 ```
+
+## What happens when the VPC are in different AWS Account
+```text
+Step 0
+First AWS Account - AccountAAA
+Second AWD Account - AccountBBB
+
+Step 1
+Create Resource Share
+First Acct - Create Resource share using AWS Resoirce Access Mgr
+Second Acct - Accept the resource share
+
+Step 2
+Second Acct - Create VPC, SN, IGW, Routes and EC2
+Create VPC Attachment
+
+First acct - Accept the VPC Attachement
+First Acct - Verify Association, PRopagation
+
+```
