@@ -66,10 +66,27 @@ variable "plans" {
 variable "env_type" {}
 variable "queue_name" {}
 
-//resource "aws_sqs_queue" "queue" {
-//  name = var.queue_name
-//
-//  tags = {
-//    environment_type = lookup(var.tag_map, var.env_type)
-//  }
-//}
+resource "aws_sqs_queue" "queue" {
+  name = var.queue_name
+
+  tags = {
+    environment_type = lookup(var.tag_map, var.env_type)
+  }
+}
+
+/*
+By terraform console you can check all the variables and their interpolation
+Set the environamnent variable by
+
+export TF_VAR_queue_name=santosh
+export TF_VAR_env_type=test
+
+run terraform console
+then verify
+lookup(var.tag_map, var.env_type)
+lookup(var.tag_map, var.env_type)
+var.zones["sanjose"]
+var.templates["centos7"]
+lookup(var.templates, "centos7")
+
+*/
