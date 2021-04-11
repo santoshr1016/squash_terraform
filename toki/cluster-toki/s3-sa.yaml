@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: toki-sa
+  annotations:
+    # This value should match the ARN of the role created by module.iam_assumable_role_admin in irsa.tf
+    eks.amazonaws.com/role-arn: "arn:aws:iam::<ACCOUNT ID>:role/toki-role"
