@@ -29,6 +29,8 @@ instance metadata at `169.254.169.254/latest/meta-data/iam/security-credentials/
 
 **Aproach 3 The Most secure and Preferred one**
 [IRSA](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/)
+[IRSA Temp Creds](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)
+[EC2 Creds](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials)
 ```text
 1. When you launch a pod with `kubectl apply -f`, the YAML manifest is submitted to the API server 
 with the Amazon EKS Pod Identity webhook configured.
